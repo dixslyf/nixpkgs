@@ -133,7 +133,7 @@ stdenv.mkDerivation (finalAttrs: {
   postInstall = lib.concatLines [
     (lib.optionalString stdenv.hostPlatform.isDarwin ''
       mkdir -p "$out/bin"
-      for program in keepassxc-cli keepassxc-proxy; do
+      for program in KeePassXC keepassxc-cli keepassxc-proxy; do
         ln -s "$out/Applications/KeePassXC.app/Contents/MacOS/$program" "$out/bin/$program"
       done
     '')
